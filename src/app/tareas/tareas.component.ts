@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Tarea} from '../modelos/tarea';
+import { TareasServiceService } from '../services/tareasService';
 
 @Component({
   selector: 'app-tareas',
@@ -11,14 +12,10 @@ export class TareasComponent implements OnInit {
   backClass:string="";
   tareas:Tarea[];
 
-  constructor() { }
+  constructor(private _tareasService:TareasServiceService) { }
 
   ngOnInit() {
-    this.tareas=[
-      new Tarea(1,"Planificar",1.2,1),
-      new Tarea(2,"Analiza",6,2),
-      new Tarea(3,"Testar",2,1)
-    ];
+    this.tareas=this._tareasService.getTarea();
   }
 
   unaPropiedad:number=190;

@@ -9,6 +9,8 @@ import { SectionComponent } from './section/section.component';
 import { LogoComponente } from './header/logo/logo.componente';
 import { MenuComponent } from './header/menu/menu.component';
 import { LogoService } from './services/logoservice'
+import { TareasServiceService } from './services/tareasService';
+import { ProyectoServiceService } from './services/proyectoService';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,7 @@ import { LogoService } from './services/logoservice'
   imports: [
     BrowserModule
   ],
-  providers: [LogoService],
+  providers: [LogoService, TareasServiceService, ProyectoServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

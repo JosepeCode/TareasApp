@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LogoService } from '../../services/logoservice';
+import { Tarea } from '../../modelos/tarea';
+import { TareasComponent } from '../../tareas/tareas.component';
 
 @Component({
   selector: 'sel-logo',
@@ -7,13 +9,13 @@ import { LogoService } from '../../services/logoservice';
   styleUrls: ['./logo.component.css']
 })
 export class LogoComponente{
-
   showM:boolean=false;
   fraseLocal:String="";
   constructor(private _logoServicio:LogoService) {}
 
   changeM(){
-    this.fraseLocal=this._logoServicio.decirHola();
+    this.fraseLocal=this._logoServicio.decirHola(); 
+
     this.showM=!this.showM;
   }
 

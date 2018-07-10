@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Proyecto} from '../modelos/proyecto';
+import { ProyectoServiceService } from '../services/proyectoService';
 
 @Component({
   selector: 'app-proyectos',
@@ -10,15 +11,10 @@ export class ProyectosComponent implements OnInit {
 
   proyectos:Proyecto[];
 
-  constructor() { }
+  constructor(private _proyectosService:ProyectoServiceService) { }
 
   ngOnInit() {
-
-    this.proyectos=[
-      new Proyecto(1,"App Móvil"),
-      new Proyecto(2,"MyApp")      
-    ];
-    
+    this.proyectos=this._proyectosService.getProyecto();
   }
 
 }
