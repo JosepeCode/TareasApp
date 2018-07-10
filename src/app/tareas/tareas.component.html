@@ -1,0 +1,17 @@
+<div>
+  <h2>Tareas</h2>
+  <table (mouseover)="changeBack()" [class]="backClass">
+    <tr>
+      <th>ID</th>
+      <th>DESCRIPCION</th>
+      <th>TIEMPO</th>
+      <th>PROYECTO</th>
+    </tr>
+    <tr *ngFor="let unaT of tareas">
+      <td *ngIf="evaluarPar(unaT.tid)">{{unaT.tid}}</td>
+      <td *ngIf="evaluarPar(unaT.tid)">{{unaT.descripcion}}</td>
+      <td *ngIf="evaluarPar(unaT.tid)">{{unaT.duracion}}</td>
+      <td *ngIf="evaluarPar(unaT.tid)">{{unaT.proyecto}}</td>
+    </tr>
+  </table>
+</div>
